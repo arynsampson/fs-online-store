@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+$primary-colour: #DAE8FC;
+$secondary-colour: #8AB6F5;
+$tertiary-colour: #F5C98A;
+$btn-bg: #FF8000;
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    scroll-behavior: smooth;
+}
+
+* {
+    @apply text-base p-0 m-0 box-border;
+}
+
+.main-container {
+    @apply max-w-6xl my-0 mx-auto;
+}
+
+.btn {
+    background-color: $btn-bg;
+    @apply text-white px-6 py-2 rounded-md;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: $tertiary-colour;
+    }
+}
+
+.header {
+    @apply w-full py-4 sticky top-0 left-0 right-0;
+    background: $primary-colour;
+
+    .header-content-wrapper {
+        @apply flex flex-row items-center justify-between gap-x-6; 
+
+        .logo-wrapper {
+            width: 150px;
+            height: 50px;
+
+            .logo {
+                max-width: 100%;
+            }
+        }
+
+        .navbar {
+            @apply grow flex flex-row justify-around;
+
+            .nav-item {
+                @apply uppercase font-bold;
+
+                &:hover {
+                    @apply cursor-pointer;
+                    color: $secondary-colour;
+                }
+            }
+        }
+
+    }
+}
