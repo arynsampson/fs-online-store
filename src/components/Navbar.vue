@@ -10,7 +10,7 @@
             <router-link to="/lookbook" class="nav-item">LookBook</router-link>
             <router-link to="/contact" class="nav-item">Contact</router-link> 
           </nav>
-          <button class="btn">Cart &nbsp;<i class="fa-light fa-cart-shopping"></i></button>
+          <button class="btn">Cart &nbsp;<i class="fa-sharp fa-regular fa-cart-shopping"></i></button>
       </div>
     </div>
   </header>
