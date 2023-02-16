@@ -10,11 +10,20 @@
             <router-link to="/lookbook" class="nav-item">LookBook</router-link>
             <router-link to="/contact" class="nav-item">Contact</router-link> 
           </nav>
-          <button class="btn">Cart &nbsp;<i class="fa-sharp fa-regular fa-cart-shopping"></i></button>
+          <button class="btn" @click="toggleCart">Cart &nbsp;<i class="fa-sharp fa-regular fa-cart-shopping"></i></button>
       </div>
     </div>
   </header>
+  <Cart v-if="showCart" @closeCart="toggleCart"/>
 </template>
 
-<script>
+<script setup>
+import { ref } from 'vue'
+import Cart from '@/components/Cart.vue'
+
+const showCart = ref(false);
+
+const toggleCart = () => {
+  showCart.value = !showCart.value;
+}
 </script>
