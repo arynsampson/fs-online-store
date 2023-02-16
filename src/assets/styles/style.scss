@@ -43,11 +43,10 @@ $btn-bg: #FF8000;
         @apply flex flex-row items-center justify-between gap-x-6; 
 
         .logo-wrapper {
-            width: 150px;
-            height: 50px;
+            @apply w-36 h-12;
 
             .logo {
-                max-width: 100%;
+                @apply max-w-full;
             }
         }
 
@@ -70,25 +69,19 @@ $btn-bg: #FF8000;
 // contact page
 .contact {
 
-    //background-color: $primary-colour;
-
     .contact-items-wrapper {
-        @apply flex flex-row gap-x-3 my-4;
+        @apply grid grid-cols-3 gap-x-3 my-4 border border-black border-solid;
         background-color: $primary-colour;
-        border: 1px solid black;
 
         .contact-item {
             @apply flex flex-col items-center justify-start grow py-8;
 
             .contact-item img {
-                display: block;
-                width: 50px;
+                @apply block w-12;
             }
 
             .contact-item-heading {
-                font-weight: bold;
-                font-size: 22px;
-                margin: 14px 0;
+                @apply font-bold text-2xl my-4;
             }
 
             .contact-item p {
@@ -96,68 +89,54 @@ $btn-bg: #FF8000;
             }
 
             .social-icons-wrapper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
+                @apply grid grid-cols-2 gap-2;
 
                 i {
-                    font-size: 24px;
+                    @apply text-2xl;
                 }
             }
         }
     }
 
+    // form and map section
     .contact-content-section {
-        display: grid;
-        grid-template-columns: 45% 45%;
-        justify-content: space-between;
-        margin-top: 40px;
+        @apply grid grid-cols-2 justify-between gap-5 mt-10;
 
         .form-wrapper {
-            padding: 10px 10px 10px 0;
+            @apply py-2 pl-2;
 
             form label {
-                font-weight: bold;
+                @apply font-bold;
             }
 
             form input, textarea {
-                padding: 10px 15px;
-                border-radius: 5px;
+                @apply py-3 px-4 text-sm;
                 background-color: #f5f5f5;
-                font-size: 14px;
             }
 
             textarea {
-                resize: none;
+                @apply resize-none;
             }
 
             input:focus, textarea:focus {
-                outline: none;
+                @apply outline-none;
             }
 
             .name-inputs-wrapper {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                column-gap: 10px;
+                @apply flex flex-row justify-between gap-3;
             }
 
             .input-wrapper {
-                display: flex;
-                flex-direction: column;
-                width: 100%;
-                gap: 4px;
-                text-align: left;
-                margin-bottom: 20px;
+                @apply flex flex-col w-full gap-1 text-left mb-5;
             }
 
             .form-btn {
-                width: 100%;
+                @apply w-full;
                 background-color: $btn-bg;
                 transition: all 0.3s;
 
                 &:hover {
-                    cursor: pointer;
+                    @apply cursor-pointer;
                     background-color: $tertiary-colour;
                 }
             }
@@ -168,86 +147,55 @@ $btn-bg: #FF8000;
 
 // cart modal
 .backdrop {
-    width: 100%;
+    @apply w-full absolute inset-0 flex justify-center items-center;
     background-color: rgba($color: #000000, $alpha: 0.2);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .modal {
+    @apply bg-white;
     width: 500px;
     height: 600px;
-    background-color: white;
 }
 
 .modal-header-wrapper {
-    padding: 10px 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @apply py-2 px-1 flex flex-row justify-between;
 
     .modal-header {
-        font-size: 20px;
-        font-weight: bold;
+        @apply text-xl font-bold;
     }
 
     p:hover {
-        cursor: pointer;
+        @apply cursor-pointer;
     }
 }
 
 .items-wrapper {
-    width: 100%;
+    @apply w-full overflow-x-hidden overflow-y-scroll;
     height: calc(100% - 44px);
-    overflow-x:hidden;
-    overflow-y: scroll;
 }
 
 .cart-item {
-    width: 100%;
-    height: 150px;
-    display: grid;
+    @apply w-full h-36 grid p-1 mb-4; 
     grid-template-columns: 30% 70%;
-    padding: 5px;
-    margin-bottom: 15px;
 }
 
 .item-info-wrapper {
-    width: 100%;
-    height: 100%;
-    display: grid;
+    @apply w-full h-full grid px-3;
     grid-template-rows: 10% 70% 20%;
-    padding: 0 10px;
 }
 
 .item-info-header, .item-info-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.item-info-footer {
-    align-items: flex-end;
+    @apply flex flex-row justify-between items-center;
 }
 
 .item-quantity {
-    text-align: left;
-    padding-top: 10px
+    @apply text-left pt-3;
 }
 
 .btn-qty {
-    padding: 0 15px;
-    margin: 0 3px;
-    background-color: grey;
+    @apply px-4 mx-1 bg-slate-400;
 }
 
 .item-img {
-    height: 100%;
+    @apply h-full;
 }
