@@ -259,7 +259,7 @@ $btn-bg: #FF8000;
 }
 
 .hero-items-wrapper {
-    @apply w-full flex flex-row justify-between;
+    @apply w-full flex flex-row justify-between overflow-x-scroll overflow-y-hidden;
 }
 
 // item card

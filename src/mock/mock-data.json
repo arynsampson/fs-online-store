@@ -3,239 +3,239 @@
     "item_name": "LPC",
     "item_price": "5166.95",
     "item_image": "https://robohash.org/etidperspiciatis.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "02-05-2022"
+    "isFeatured": false,
+    "date_added": "02/05/2022"
 },
 {
     "id": 2,
     "item_name": "DVD",
     "item_price": "1423.01",
     "item_image": "https://robohash.org/quasaconsectetur.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "03-11-2022"
+    "isFeatured": false,
+    "date_added": "03/11/2022"
 },
 {
     "id": 3,
     "item_name": "CVIS",
     "item_price": "5524.60",
     "item_image": "https://robohash.org/autemeosconsequatur.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "16-05-2022"
+    "isFeatured": true,
+    "date_added": "16/05/2022"
 },
 {
     "id": 4,
     "item_name": "Psychology",
     "item_price": "7199.76",
     "item_image": "https://robohash.org/remevenietcum.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "18-03-2023"
+    "isFeatured": true,
+    "date_added": "18/03/2023"
 },
 {
     "id": 5,
     "item_name": "Lynx",
     "item_price": "2582.48",
     "item_image": "https://robohash.org/etquianumquam.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "19-09-2022"
+    "isFeatured": false,
+    "date_added": "19/09/2022"
 },
 {
     "id": 6,
     "item_name": "Crossbeam XOS",
     "item_price": "7471.50",
     "item_image": "https://robohash.org/exercitationemaccusantiumomnis.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "20-10-2022"
+    "isFeatured": false,
+    "date_added": "20/10/2022"
 },
 {
     "id": 7,
     "item_name": "Public Sector",
     "item_price": "3864.08",
     "item_image": "https://robohash.org/debitisquinemo.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "29-05-2022"
+    "isFeatured": false,
+    "date_added": "29/05/2022"
 },
 {
     "id": 8,
     "item_name": "Siebel",
     "item_price": "5250.15",
     "item_image": "https://robohash.org/pariaturdoloremquequisquam.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "22-06-2022"
+    "isFeatured": false,
+    "date_added": "22/06/2022"
 },
 {
     "id": 9,
     "item_name": "Data Entry",
     "item_price": "3805.37",
     "item_image": "https://robohash.org/etdelectuset.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "29-11-2022"
+    "isFeatured": true,
+    "date_added": "29/11/2022"
 },
 {
     "id": 10,
     "item_name": "Program Evaluation",
     "item_price": "2594.13",
     "item_image": "https://robohash.org/excepturiquaeratoptio.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "18-01-2023"
+    "isFeatured": true,
+    "date_added": "18/01/2023"
 },
 {
     "id": 11,
     "item_name": "JCT",
     "item_price": "1341.86",
     "item_image": "https://robohash.org/etutquia.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "20-11-2022"
+    "isFeatured": true,
+    "date_added": "20/11/2022"
 },
 {
     "id": 12,
     "item_name": "Board of Directors",
     "item_price": "6811.37",
     "item_image": "https://robohash.org/noncorruptibeatae.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "08-12-2022"
+    "isFeatured": false,
+    "date_added": "08/12/2022"
 },
 {
     "id": 13,
     "item_name": "Kalman filtering",
     "item_price": "1181.51",
     "item_image": "https://robohash.org/sintautconsectetur.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "19-09-2022"
+    "isFeatured": true,
+    "date_added": "19/09/2022"
 },
 {
     "id": 14,
     "item_name": "PMBOK",
     "item_price": "3207.90",
     "item_image": "https://robohash.org/harumnamcupiditate.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "20-02-2023"
+    "isFeatured": false,
+    "date_added": "20/02/2023"
 },
 {
     "id": 15,
     "item_name": "UB04",
     "item_price": "7657.12",
     "item_image": "https://robohash.org/harumillumdolorum.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "02-12-2022"
+    "isFeatured": false,
+    "date_added": "02/12/2022"
 },
 {
     "id": 16,
     "item_name": "Flooring",
     "item_price": "8090.39",
     "item_image": "https://robohash.org/nihilvoluptasexpedita.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "21-09-2022"
+    "isFeatured": true,
+    "date_added": "21/09/2022"
 },
 {
     "id": 17,
     "item_name": "Oracle RDC",
     "item_price": "7245.48",
     "item_image": "https://robohash.org/doloremeumquo.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "14-01-2023"
+    "isFeatured": false,
+    "date_added": "14/01/2023"
 },
 {
     "id": 18,
     "item_name": "Drawing",
     "item_price": "9072.20",
     "item_image": "https://robohash.org/quiutitaque.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "18-07-2022"
+    "isFeatured": false,
+    "date_added": "18/07/2022"
 },
 {
     "id": 19,
     "item_name": "NIR Spectroscopy",
     "item_price": "6072.47",
     "item_image": "https://robohash.org/temporeodionisi.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "11-05-2022"
+    "isFeatured": true,
+    "date_added": "11/05/2022"
 },
 {
     "id": 20,
     "item_name": "OGSYS",
     "item_price": "5693.79",
     "item_image": "https://robohash.org/sitplaceatnam.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "02-09-2022"
+    "isFeatured": false,
+    "date_added": "02/09/2022"
 },
 {
     "id": 21,
     "item_name": "Smart GWT",
     "item_price": "2232.47",
     "item_image": "https://robohash.org/estquaset.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "14-07-2022"
+    "isFeatured": true,
+    "date_added": "14/07/2022"
 },
 {
     "id": 22,
     "item_name": "EPC",
     "item_price": "3365.09",
     "item_image": "https://robohash.org/autemdolorasperiores.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "05-06-2022"
+    "isFeatured": false,
+    "date_added": "05/06/2022"
 },
 {
     "id": 23,
     "item_name": "Erosion",
     "item_price": "7453.77",
     "item_image": "https://robohash.org/dolorumetsimilique.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "18-06-2022"
+    "isFeatured": false,
+    "date_added": "18/06/2022"
 },
 {
     "id": 24,
     "item_name": "ILS",
     "item_price": "6098.81",
     "item_image": "https://robohash.org/laborumaccusantiumvoluptatum.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "25-02-2023"
+    "isFeatured": false,
+    "date_added": "25/02/2023"
 },
 {
     "id": 25,
     "item_name": "Listings",
     "item_price": "6747.05",
     "item_image": "https://robohash.org/autidnumquam.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "01-01-2023"
+    "isFeatured": true,
+    "date_added": "01/01/2023"
 },
 {
     "id": 26,
     "item_name": "CCIP",
     "item_price": "5162.16",
     "item_image": "https://robohash.org/quaeratevenietqui.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "18-12-2022"
+    "isFeatured": true,
+    "date_added": "18/12/2022"
 },
 {
     "id": 27,
     "item_name": "RF Circuits",
     "item_price": "6393.37",
     "item_image": "https://robohash.org/vitaefugitveritatis.png?size=200x240&set=set1",
-    "featured": false,
-    "date_added": "18-10-2022"
+    "isFeatured": false,
+    "date_added": "18/10/2022"
 },
 {
     "id": 28,
     "item_name": "Content Strategy",
     "item_price": "2674.19",
     "item_image": "https://robohash.org/velitomnisaccusamus.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "30-01-2023"
+    "isFeatured": true,
+    "date_added": "30/01/2023"
 },
 {
     "id": 29,
     "item_name": "HSE auditing",
     "item_price": "5612.02",
     "item_image": "https://robohash.org/fugitprovidenttemporibus.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "14-06-2022"
+    "isFeatured": true,
+    "date_added": "14/06/2022"
 },
 {
     "id": 30,
     "item_name": "ERP Implementations",
     "item_price": "1561.07",
     "item_image": "https://robohash.org/ametquamveritatis.png?size=200x240&set=set1",
-    "featured": true,
-    "date_added": "28-01-2023"
+    "isFeatured": true,
+    "date_added": "28/01/2023"
 }
 ]
