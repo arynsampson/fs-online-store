@@ -8,8 +8,9 @@
           </div>
           <div class="shop-items">
             <Item 
-              v-for="item in data"
-              :key="item.id"
+              v-for="(item, index) in data"
+              :key="index"
+              :uid="item.id"
               :image="item.item_image"
               :name="item.item_name"
               :price="item.item_price"
@@ -28,6 +29,5 @@ import Navbar from '@/components/Navbar.vue'
 import Item from '@/components/Item.vue'
 
 const data = ref(MockData);
-console.log(data.value[0])
 
 </script>

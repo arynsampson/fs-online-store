@@ -17,7 +17,7 @@ const routes = [
     component: About
   },
   {
-    path: '/lookbook',
+    path: '/lookbook/:id',
     name: 'lookbook',
     component: LookBook
   },
