@@ -42,12 +42,23 @@ $btn-bg: #FF8000;
     @apply text-left mb-3;
 }
 
+.content-section {
+    @apply flex flex-row items-start justify-between;
+}
+
+.pagination {
+    @apply flex flex-row justify-center py-1;
+}
+
 .img {
     @apply block;
 }
 
 
 /**********************************************************/
+
+// home page
+
 // header bar
 .header {
     @apply w-full py-4 sticky top-0 left-0 right-0;
@@ -78,6 +89,19 @@ $btn-bg: #FF8000;
         }
 
     }
+}
+
+//shop page
+.shop {
+    padding-top: 20px;
+}
+
+.shop-items {
+    //@apply w-full flex flex-row justify-between flex-wrap;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 30px;
 }
 
 // contact page
@@ -222,4 +246,36 @@ $btn-bg: #FF8000;
 
 .about-img {
     @apply w-full;
+}
+
+
+// hero section
+.hero-section {
+    @apply mt-9;
+}
+
+.hero-content-wrapper {
+    @apply flex flex-row justify-around items-center py-7;
+}
+
+.hero-items-wrapper {
+    @apply w-full flex flex-row justify-between;
+}
+
+// item card
+.item-wrapper {
+    width: 200px;
+    margin: 3px 0;
+    border: 1px solid black;
+
+    .item-card-img {
+        border-bottom: 1px solid black;
+    }
+
+    .item-card-info-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 4px;
+    }
 }

@@ -1,11 +1,33 @@
 <template>
   <Navbar />
     <div class="shop">
-      <h1>This is the shop page</h1>
+      <div class="main-container">
+        <div class="shop-content">
+          <div class="data-manips">
+
+          </div>
+          <div class="shop-items">
+            <Item 
+              v-for="item in data"
+              :key="item.id"
+              :image="item.item_image"
+              :name="item.item_name"
+              :price="item.item_price"
+            />
+          </div>
+        </div>
+      </div>
     </div>
 </template>
 
 <script setup>
 // @ is an alias to /src
+import {ref} from 'vue'
+import MockData from '@/mock/mock-data.json'
 import Navbar from '@/components/Navbar.vue'
+import Item from '@/components/Item.vue'
+
+const data = ref(MockData);
+console.log(data.value[0])
+
 </script>
