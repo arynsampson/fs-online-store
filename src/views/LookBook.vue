@@ -5,6 +5,8 @@
         <p><img :src="item.item_image" alt=""></p>
         <p>{{ item.item_name }}</p>
         <p>{{ item.item_price }}</p>
+        
+        <button @click="addToCart">Add to cart</button>
       </div>
     </div>
 </template>
@@ -29,6 +31,20 @@ export default {
 
     return {
       Navbar
+    }
+  },
+  methods: {
+    addToCart() {
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      const cartItem = {
+        itemID: this.item.id,
+        itemName: this.item.item_name,
+        itemPrice: this.item.item_price,
+        itemImage: this.item.item_image,
+        quantity: 1
+    }
+    cart.push(cartItem);
+      localStorage.setItem('cart', JSON.stringify(cart));
     }
   },
   mounted() {
