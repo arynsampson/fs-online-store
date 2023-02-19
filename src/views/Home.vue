@@ -72,7 +72,7 @@
 
 <script>
 // @ is an alias to /src
-import { reactive, computed, ref } from 'vue'
+import { onMounted, reactive, computed, ref } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper'
 import Navbar from '@/components/Navbar.vue'
@@ -91,9 +91,16 @@ export default {
   },
   setup() {
     const data = ref(MockData);
+    const cart = ref([]);
 
     const featuredItems = computed(() => {
     return data.value.filter((item) => item.isFeatured );
+    })
+
+    onMounted(() => {
+      if(!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', JSON.stringify(cart.value));
+      }
     })
 
     return {
