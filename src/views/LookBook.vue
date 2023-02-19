@@ -36,15 +36,34 @@ export default {
   methods: {
     addToCart() {
       const cart = JSON.parse(localStorage.getItem('cart'));
-      const cartItem = {
-        itemID: this.item.id,
-        itemName: this.item.item_name,
-        itemPrice: this.item.item_price,
-        itemImage: this.item.item_image,
-        quantity: 1
-    }
-    cart.push(cartItem);
-      localStorage.setItem('cart', JSON.stringify(cart));
+      if(cart.length === 0 ) {
+        const cartItem = {
+          itemID: this.item.id,
+          itemName: this.item.item_name,
+          itemPrice: this.item.item_price,
+          itemImage: this.item.item_image,
+          quantity: 1
+        }
+          cart.push(cartItem);
+          localStorage.setItem('cart', JSON.stringify(cart));
+      } else {
+        cart.forEach((item) => {
+          if(this.item.id == item.itemID) {
+          alert('You have already added this item. Open your cart to update the item quantity.');
+          return;
+        } else {
+          const cartItem = {
+          itemID: this.item.id,
+          itemName: this.item.item_name,
+          itemPrice: this.item.item_price,
+          itemImage: this.item.item_image,
+          quantity: 1
+        }
+          cart.push(cartItem);
+          localStorage.setItem('cart', JSON.stringify(cart));
+        }
+        })
+      }
     }
   },
   mounted() {
