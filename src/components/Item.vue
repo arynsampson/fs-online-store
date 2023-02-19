@@ -9,7 +9,5 @@
 </template>
 
 <script setup>
-
-const props = defineProps(['uid', 'image', 'name', 'price']);
-
+    const props = defineProps(['uid', 'image', 'name', 'price']);
 </script>

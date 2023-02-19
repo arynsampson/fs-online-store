@@ -269,7 +269,11 @@ $btn-bg: #FF8000;
     border: 1px solid black;
 
     .item-card-img {
-        border-bottom: 1px solid black;
+        transition: transform 0.8s;
+    }
+
+    .item-card-img:hover {
+        transform: scale(1.2);
     }
 
     .item-card-info-wrapper {
@@ -277,6 +281,7 @@ $btn-bg: #FF8000;
         flex-direction: row;
         justify-content: space-between;
         padding: 5px 4px;
+        border-top: 1px solid black;
     }
 }
 
