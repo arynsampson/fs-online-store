@@ -259,7 +259,7 @@ $btn-bg: #FF8000;
 }
 
 .hero-items-wrapper {
-    @apply w-full flex flex-row justify-between overflow-x-scroll overflow-y-hidden;
+    @apply w-full flex flex-row justify-between;
 }
 
 // item card
@@ -279,3 +279,32 @@ $btn-bg: #FF8000;
         padding: 5px 4px;
     }
 }
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .swiper-wrapper {
+    margin-bottom: 45px;
+    z-index: -1;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
