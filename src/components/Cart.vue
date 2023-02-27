@@ -8,19 +8,19 @@
         <div class="items-wrapper">
             <p> {{ msg }} </p>
             <div class="cart-item" v-for="(item, index) in cart" :key="index">
-                <img :src="item.itemImage" :alt="item.itemName" class="item-img">
+                <img :src="item.image" :alt="item.carModel" class="item-img">
                 <div class="item-info-wrapper">
                     <div class="item-info-header">
-                        <router-link :to="{ name: 'lookbook', params: { id: item.itemID } }">{{ item.itemName }}</router-link>
-                        <p class="cursor-pointer" @click="removeItem(item.itemName, index)">X</p>
+                        <router-link :to="{ name: 'lookbook', params: { id: item.itemID } }">{{ item.carMake }} {{ item.carModel }}</router-link>
+                        <p class="cursor-pointer" @click="removeItem(item.carModel, index)">X</p>
                     </div>
                     <p class="item-quantity">QTY: <span> {{ item.quantity }}</span></p>
                     <div class="item-info-footer">
                         <div class="update-item-amount">
-                            <button class="decrease-item-qty btn-qty" @click="decQuantity(item.itemName, index)">-</button>
-                            <button class="increase-item-qty btn-qty" @click="incQuantity(item.itemName, index)">+</button>
+                            <button class="decrease-item-qty btn-qty" @click="decQuantity(item.carModel, index)">-</button>
+                            <button class="increase-item-qty btn-qty" @click="incQuantity(item.carModel, index)">+</button>
                         </div>
-                        <p class="item-price">R{{ item.itemPrice }}</p>
+                        <p class="item-price">R{{ item.price }}</p>
                     </div>
                 </div>
 
@@ -43,11 +43,11 @@ export default {
         const msg = ref('');
         const cost = ref(0);
 
-        const removeItem = (itemName, index) => {
+        const removeItem = (carModel, index) => {
             cart.value.forEach((item) => {
-                if(item.itemName === itemName) {
+                if(item.carModel === carModel) {
                     cart.value.splice(index, 1);
-                    cost.value -= parseInt(item.itemPrice) * item.quantity;
+                    cost.value -= parseInt(item.price) * item.quantity;
                 }
             })
             if(cart.value.length === 0 ) {
@@ -56,23 +56,23 @@ export default {
             localStorage.setItem('cart', JSON.stringify(cart.value));
         }
 
-        const incQuantity = (itemName) => {
+        const incQuantity = (carModel) => {
             cart.value.forEach((item) => {
-                if(item.itemName === itemName) {
+                if(item.carModel === carModel) {
                     item.quantity += 1;
-                    cost.value += parseInt(item.itemPrice);
+                    cost.value += parseInt(item.price);
                 }
             })
             localStorage.setItem('cart', JSON.stringify(cart.value));
         }
 
-        const decQuantity = (itemName, index) => {
+        const decQuantity = (carModel, index) => {
             cart.value.forEach((item) => {
-                if(item.itemName === itemName) {
+                if(item.carModel === carModel) {
                     item.quantity -= 1;
-                    cost.value -= parseInt(item.itemPrice);
+                    cost.value -= parseInt(item.price);
                     if(item.quantity === 0) {
-                        removeItem(itemName, index)
+                        removeItem(carModel, index)
                     }
                 }
             })
@@ -86,7 +86,7 @@ export default {
             } else {
                 cart.value = cartData;
                 cart.value.forEach((item) => {
-                    cost.value += item.itemPrice * item.quantity
+                    cost.value += item.price * item.quantity
                 })
             }
         })

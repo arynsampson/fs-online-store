@@ -16,21 +16,22 @@ const props = defineProps(['uid', 'image', 'carMake', 'carModel', 'price']);
 
 const addToCart = (itemID) => {
     const cart = JSON.parse(localStorage.getItem('cart'));
-    const items = JSON.parse(localStorage.getItem('items'));
+    const cars = JSON.parse(localStorage.getItem('cars'));
     const item = reactive({})
 
-    for(let x = 0; x < items.length; x++) {
-        if(items[x].id === itemID) {
-            item.value = items[x];
+    for(let x = 0; x < cars.length; x++) {
+        if(cars[x].id === itemID) {
+            item.value = cars[x];
 
         }
     }
     
     cart.push({
         itemID: item.value.id,
-        itemName: item.value.item_name,
-        itemPrice: item.value.item_price,
-        itemImage: item.value.item_image,
+        carMake: item.value.carMake,
+        carModel: item.value.carModel,
+        price: item.value.price,
+        image: item.value.image,
         quantity: 1
     });
 
