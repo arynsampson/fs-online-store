@@ -11,8 +11,8 @@
                 <img :src="item.itemImage" :alt="item.itemName" class="item-img">
                 <div class="item-info-wrapper">
                     <div class="item-info-header">
-                        <p>{{ item.itemName }}</p>
-                        <p @click="removeItem(item.itemName, index)">X</p>
+                        <router-link :to="{ name: 'lookbook', params: { id: item.itemID } }">{{ item.itemName }}</router-link>
+                        <p class="cursor-pointer" @click="removeItem(item.itemName, index)">X</p>
                     </div>
                     <p class="item-quantity">QTY: <span> {{ item.quantity }}</span></p>
                     <div class="item-info-footer">
@@ -23,8 +23,11 @@
                         <p class="item-price">R{{ item.itemPrice }}</p>
                     </div>
                 </div>
+
             </div>
-            <hr />
+        </div>
+        <div class="total-cost-wrapper">
+            <p>R {{ cost }}</p>
         </div>
     </div>
    </div>
@@ -38,13 +41,18 @@ export default {
 
         const cart = ref([]);
         const msg = ref('');
+        const cost = ref(0);
 
         const removeItem = (itemName, index) => {
             cart.value.forEach((item) => {
                 if(item.itemName === itemName) {
                     cart.value.splice(index, 1);
+                    cost.value -= parseInt(item.itemPrice) * item.quantity;
                 }
             })
+            if(cart.value.length === 0 ) {
+                cost.value = 0;
+            }
             localStorage.setItem('cart', JSON.stringify(cart.value));
         }
 
@@ -52,6 +60,7 @@ export default {
             cart.value.forEach((item) => {
                 if(item.itemName === itemName) {
                     item.quantity += 1;
+                    cost.value += parseInt(item.itemPrice);
                 }
             })
             localStorage.setItem('cart', JSON.stringify(cart.value));
@@ -61,6 +70,7 @@ export default {
             cart.value.forEach((item) => {
                 if(item.itemName === itemName) {
                     item.quantity -= 1;
+                    cost.value -= parseInt(item.itemPrice);
                     if(item.quantity === 0) {
                         removeItem(itemName, index)
                     }
@@ -75,12 +85,16 @@ export default {
                 msg.value = 'No items.';
             } else {
                 cart.value = cartData;
+                cart.value.forEach((item) => {
+                    cost.value += item.itemPrice * item.quantity
+                })
             }
         })
 
         return {
             cart,
             msg,
+            cost,
             removeItem,
             incQuantity,
             decQuantity

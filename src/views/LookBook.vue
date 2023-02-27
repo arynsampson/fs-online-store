@@ -2,11 +2,13 @@
   <Navbar />
     <div class="lookbook">
       <div class="main-container">
-        <p><img :src="item.item_image" alt=""></p>
-        <p>{{ item.item_name }}</p>
-        <p>{{ item.item_price }}</p>
+        <p><img :src="item.image" alt=""></p>
+        <p>{{ item.carMake }} {{ item.carModel }}</p>
+        <p>R{{ item.price }}</p>
         
-        <button @click="addToCart">Add to cart</button>
+
+        <button v-if="!inCart" @click="addToCart">Add to cart</button>
+        <p v-else>Item is in cart</p>
       </div>
     </div>
 </template>
@@ -15,7 +17,6 @@
 // @ is an alias to /src
 import { onMounted } from 'vue'
 import Navbar from '@/components/Navbar.vue'
-import MockData from '@/mock/mock-data.json'
 
 export default {
   components: {
@@ -24,7 +25,8 @@ export default {
   data() {
     return {
       data: [],
-      item: {}
+      item: {},
+      inCart: false
     }
   },  
   setup() {
@@ -36,43 +38,48 @@ export default {
   methods: {
     addToCart() {
       const cart = JSON.parse(localStorage.getItem('cart'));
-      if(cart.length === 0 ) {
-        const cartItem = {
+    
+        cart.push({
           itemID: this.item.id,
-          itemName: this.item.item_name,
-          itemPrice: this.item.item_price,
-          itemImage: this.item.item_image,
+          itemName: this.item.carMake,
+          itemPrice: this.item.price,
+          itemImage: this.item.image,
           quantity: 1
-        }
-          cart.push(cartItem);
-          localStorage.setItem('cart', JSON.stringify(cart));
-      } else {
-        cart.forEach((item) => {
-          if(this.item.id == item.itemID) {
-          alert('You have already added this item. Open your cart to update the item quantity.');
-          return;
-        } else {
-          const cartItem = {
-          itemID: this.item.id,
-          itemName: this.item.item_name,
-          itemPrice: this.item.item_price,
-          itemImage: this.item.item_image,
-          quantity: 1
-        }
-          cart.push(cartItem);
-          localStorage.setItem('cart', JSON.stringify(cart));
-        }
-        })
-      }
+        });
+
+      // for(let x = 0; x < cart.length; x++) {
+      //   if(cart[x].itemID === parseInt(this.$route.params.id)) {
+      //       alert('You already have this item in your cart.');
+      //   } else {
+      //       // cart.push({
+      //       // itemID: this.item.id,
+      //       // itemName: this.item.item_name,
+      //       // itemPrice: this.item.item_price,
+      //       // itemImage: this.item.item_image,
+      //       // quantity: 1
+      //       // });
+      //   }
+      // }
+
+      this.inCart = true;
+
+      localStorage.setItem('cart', JSON.stringify(cart));
     }
   },
   mounted() {
-    this.data = MockData
-    this.data.forEach((item) => {
+    const cars = JSON.parse(localStorage.getItem('cars'));
+    cars.forEach((item) => {
       if(item.id == this.$route.params.id) {
         this.item = item;
       }
     })
+
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    for(let x = 0; x < cart.length; x++) {
+      if(cart[x].itemID === this.item.id) {
+        this.inCart = true;
+      }
+    }
   }
 }
 </script>
