@@ -20,6 +20,10 @@ $btn-bg: #FF8000;
     @apply text-base p-0 m-0 box-border;
 }
 
+.modal-open {
+    overflow: hidden;
+}
+
 .main-container {
     @apply max-w-6xl my-0 mx-auto;
 }
@@ -208,7 +212,7 @@ $btn-bg: #FF8000;
     
     .items-wrapper {
         @apply w-full overflow-x-hidden overflow-y-scroll;
-        height: calc(100% - 44px);
+        height: 85%;
 
         .cart-item {
             @apply w-full h-36 grid p-1 mb-4; 

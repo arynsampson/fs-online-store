@@ -24,5 +24,10 @@ const showCart = ref(false);
 
 const toggleCart = () => {
   showCart.value = !showCart.value;
+  if(showCart.value === true) {
+    document.body.classList.add("modal-open");
+  } else {
+    document.body.classList.remove("modal-open");
+  }
 }
 </script>
