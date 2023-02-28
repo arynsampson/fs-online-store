@@ -99,6 +99,20 @@ $btn-bg: #FF8000;
 //shop page
 .shop {
     padding-top: 20px;
+
+    .data-manips {
+        margin-bottom: 15px;    
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        column-gap: 15px;
+
+        input[type="text"] {
+            padding: 5px 10px;
+        }
+    }
 }
 
 .shop-items {
