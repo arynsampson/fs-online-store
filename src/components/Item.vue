@@ -4,7 +4,7 @@
             <img src="https://static.vecteezy.com/system/resources/previews/001/193/930/original/vintage-car-png.png" alt="item-img" class="item-card-img">
         </div>
         <div class="item-card-info-wrapper">
-            <router-link :to="{ name: 'lookbook', params: { id: uid } }">{{ carMake }} {{ carModel }}</router-link>
+            <router-link :to="{ name: 'lookbook', params: { id: uid } }" class="item-name">{{ carMake }} {{ carModel }}</router-link>
             <p class="item-card-price">R {{ price }}</p>
         </div>
         <button class="add-to-cart-btn button" @click="addToCart(uid)">Add to cart</button>
@@ -53,3 +53,15 @@ const addToCart = (itemID) => {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 </script>
+
+<style scoped>
+    .item-card-img:hover {
+        transform: scale(1.3);
+    }
+
+    .item-name:hover {
+        cursor: pointer;
+        color: darkblue;
+        text-decoration: underline;
+    }
+</style>

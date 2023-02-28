@@ -56,7 +56,6 @@ $btn-bg: #FF8000;
 
 .img {
     @apply block;
-    max-width: 80%;
 }
 
 
@@ -169,6 +168,7 @@ $btn-bg: #FF8000;
             form input, textarea {
                 @apply py-3 px-4 text-sm;
                 background-color: #f5f5f5;
+                border: black 1px solid;
             }
 
             textarea {
