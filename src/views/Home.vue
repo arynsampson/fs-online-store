@@ -6,7 +6,7 @@
         <div class="hero-content-wrapper">
           <div class="hero-items-wrapper">
             <swiper 
-              :slides-per-view="4"
+              :slides-per-view="3"
               :pagination="{
                 clickable: true
               }"
@@ -35,7 +35,7 @@
       <h3 class="secondary-heading">Featured</h3>
         <div class="content-section">
           <swiper 
-              :slides-per-view="4"
+              :slides-per-view="3"
               :pagination="{
                 clickable: true
               }"
@@ -60,7 +60,7 @@
       <h3 class="secondary-heading">New Additions</h3>
         <div class="content-section">
           <swiper 
-              :slides-per-view="4"
+              :slides-per-view="3"
               :pagination="{
                 clickable: true
               }"

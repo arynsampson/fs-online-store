@@ -51,7 +51,7 @@
                 <label for="message">Message*</label>
                 <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
               </div>
-              <input type="submit" value="Send message" class="btn form-btn">
+              <input type="submit" value="Send message" class="button form-btn">
             </form>
           </div>
           <div class="map-wrapper">

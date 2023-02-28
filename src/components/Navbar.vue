@@ -9,7 +9,7 @@
             <router-link to="/about" class="nav-item">About</router-link>
             <router-link to="/contact" class="nav-item">Contact</router-link> 
           </nav>
-          <button class="btn" @click="toggleCart">Cart &nbsp;<i class="fa-sharp fa-regular fa-cart-shopping"></i></button>
+          <button class="button" @click="toggleCart">Cart &nbsp;<i class="fa-sharp fa-regular fa-cart-shopping"></i></button>
       </div>
     </div>
   </header>

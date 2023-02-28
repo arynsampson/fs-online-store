@@ -1,11 +1,13 @@
 <template>
     <div class="item-wrapper">
-        <img src="https://via.placeholder.com/198x237" alt="item-img" class="item-card-img">
-        <div class="add-to-cart-btn" @click="addToCart(uid)"></div>
+        <div class="item-img-wrapper">
+            <img src="https://static.vecteezy.com/system/resources/previews/001/193/930/original/vintage-car-png.png" alt="item-img" class="item-card-img">
+        </div>
         <div class="item-card-info-wrapper">
             <router-link :to="{ name: 'lookbook', params: { id: uid } }">{{ carMake }} {{ carModel }}</router-link>
             <p class="item-card-price">R {{ price }}</p>
         </div>
+        <button class="add-to-cart-btn button" @click="addToCart(uid)">Add to cart</button>
     </div>
 </template>
 
@@ -22,7 +24,6 @@ const addToCart = (itemID) => {
     for(let x = 0; x < cars.length; x++) {
         if(cars[x].id === itemID) {
             item.value = cars[x];
-
         }
     }
     
@@ -51,5 +52,4 @@ const addToCart = (itemID) => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 }
-
 </script>
