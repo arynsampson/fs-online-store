@@ -6,10 +6,7 @@
         <div class="hero-content-wrapper">
           <div class="hero-items-wrapper">
             <swiper 
-              :slides-per-view="3"
-              :pagination="{
-                clickable: true
-              }"
+              :slides-per-view="slides"
               :navigation="true"
               :modules="modules"
               class="mySwiper"
@@ -35,7 +32,7 @@
       <h3 class="secondary-heading">Featured</h3>
         <div class="content-section">
           <swiper 
-              :slides-per-view="3"
+              :slides-per-view="slides"
               :pagination="{
                 clickable: true
               }"
@@ -60,7 +57,7 @@
       <h3 class="secondary-heading">New Additions</h3>
         <div class="content-section">
           <swiper 
-              :slides-per-view="3"
+              :slides-per-view="slides"
               :pagination="{
                 clickable: true
               }"
@@ -109,6 +106,7 @@ export default {
     const data = ref(MockData);
     const cart = ref([]);
     const date = new Date('2023-01-01');
+    const slides = ref(0);
 
     const featuredItems = computed(() => {
     return data.value.filter((item) => item.isFeatured );
@@ -130,12 +128,19 @@ export default {
         localStorage.setItem('cars', JSON.stringify(MockData));
       }
 
+      if(/Android|iPhone/i.test(navigator.userAgent) === true) {
+        slides.value = 1;
+      } else {
+        slides.value = 3;
+      }
+
     })
 
     return {
       Navbar,
       Item,
       data,
+      slides,
       Swiper,
       SwiperSlide,
       newAdditions,
