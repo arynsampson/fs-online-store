@@ -35,21 +35,6 @@ const addToCart = (itemID) => {
         image: item.value.image,
         quantity: 1
     });
-
-    // for(let x = 0; x < cart.length; x++) {
-    // if(cart[x].itemID === itemID) {
-    //     alert('You already have this item in your cart.');
-    // } else {
-    //     // cart.push({
-    //     // itemID: this.item.id,
-    //     // itemName: this.item.item_name,
-    //     // itemPrice: this.item.item_price,
-    //     // itemImage: this.item.item_image,
-    //     // quantity: 1
-    //     // });
-    // }
-    // }
-
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 </script>
