@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+* {
+    @apply text-base p-0 m-0 box-border;
+}
+
+.secondary-heading {
+    @apply text-left text-3xl font-bold uppercase my-4;
+}
+
+.content-paragraph {
+    @apply text-left mb-3 leading-relaxed;
+}
+
+.content-section {
+    @apply flex flex-row items-start justify-between;
+}
+
+input, textarea {
+    @apply py-4 px-4 text-sm border border-black border-solid;
+}
+
+img {
+    @apply block;
+}
+
+.modal-open {
+    @apply overflow-hidden
+}
+
+form label {
+    @apply font-bold;
+}
+
+textarea {
+    @apply resize-none;
+}
+
+input:focus, textarea:focus {
+    @apply outline-none;
+}
+
+.item-wrapper {
+    @apply mt-1 flex flex-col justify-evenly items-center w-full border border-solid border-black;
+    height: 300px;
+    border-radius: 15px;
+
+    .item-img-wrapper {
+        @apply w-36 flex justify-center;
+        
+        .item-card-img {
+            max-width: 100%;
+            transition: transform 0.8s;
+        }
+    }
+}
+
+.hide {
+    display: none;
+  }
+  .hidden {
+    opacity: 0;
+    transition: all 2s;
+  }
+  .show {
+    opacity: 1;
+  }
