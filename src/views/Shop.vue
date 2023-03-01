@@ -7,17 +7,23 @@
             <form>
               <input type="text" v-model="searchVal" placeholder="Search items" @keyup="worker('search')">
               <div>
-                <select name="sort" id="sort" ref="sort" @change="worker($event.target.value)">
+                <select name="sort" id="sort" @change="worker($event.target.value)">
+                  <option>Choose sort</option>
                   <option value="asc">Name A-Z</option>
                   <option value="desc">Name Z-A</option>
                   <option value="priceASC">Price low - high</option>
                   <option value="priceDESC">Price high-low</option>
                 </select>
               </div>
+              <div>
+                <select name="filter" id="filter" @change="worker($event.target.value)">
+                  <option>Choose filter</option>
+                  <option v-for="(car, index) in data" :value="car.carMake" :key="index">{{ car.carMake }}</option>
+                </select>
+              </div>
             </form>
-            <p> {{ searchVal }}</p>
           </div>
-          <div class="shop-items">
+          <div class="shop-items hidden">
             <Item 
               v-for="(item, index) in data"
               :key="index"
@@ -43,6 +49,21 @@ import Item from '@/components/Item.vue'
 const data = ref(MockData);
 const searchVal = ref('');
 const sort = ref(null);
+
+onMounted(() => {
+  const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        } else {
+          entry.target.classList.remove('show');
+        }
+      });
+    });
+    const elements = document.querySelectorAll('.hidden');
+    elements.forEach((el) => observer.observe(el));
+  },
+)
 
 watch(searchVal, (newSearchVal, oldSearchVal) => {
   if(newSearchVal === '') {
@@ -103,8 +124,11 @@ const worker = workerVal => {
       });
       data.value = sortResultsPriceDESC.value;
     break;
+      // const filterCarMake = computed(() => {
+      //   return data.value.filter((item) => item.carMake.toLowerCase().includes(workerVal));
+      // });
+      // data.value = filterCarMake;
   }
-
 }
 </script>
 
