@@ -8,7 +8,9 @@
         <div class="items-wrapper">
             <p> {{ msg }} </p>
             <div class="cart-item" v-for="(item, index) in cart" :key="index">
-                <img :src="item.image" :alt="item.carModel" class="item-img">
+                <div class="cart-img-wrapper">
+                    <img :src="item.image" :alt="item.carModel" class="item-img">
+                </div>
                 <div class="item-info-wrapper">
                     <div class="item-info-header">
                         <router-link :to="{ name: 'lookbook', params: { id: item.itemID } }">{{ item.carMake }} {{ item.carModel }}</router-link>
@@ -27,7 +29,7 @@
             </div>
         </div>
         <div class="total-cost-wrapper">
-            <p>R {{ cost }}</p>
+            <p>Your total: R {{ cost }}</p>
         </div>
     </div>
    </div>
@@ -43,6 +45,7 @@ export default {
         const msg = ref('');
         const cost = ref(0);
 
+        // remove item from cart
         const removeItem = (carModel, index) => {
             cart.value.forEach((item) => {
                 if(item.carModel === carModel) {
@@ -56,6 +59,7 @@ export default {
             localStorage.setItem('cart', JSON.stringify(cart.value));
         }
 
+        // increase item quantity in cart
         const incQuantity = (carModel) => {
             cart.value.forEach((item) => {
                 if(item.carModel === carModel) {
@@ -66,6 +70,7 @@ export default {
             localStorage.setItem('cart', JSON.stringify(cart.value));
         }
 
+        // decrease item quantity in cart
         const decQuantity = (carModel, index) => {
             cart.value.forEach((item) => {
                 if(item.carModel === carModel) {
@@ -101,5 +106,4 @@ export default {
         }
     }
 }
-
 </script>
