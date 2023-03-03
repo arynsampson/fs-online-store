@@ -62,8 +62,7 @@ onMounted(() => {
     });
     const elements = document.querySelectorAll('.hidden');
     elements.forEach((el) => observer.observe(el));
-  },
-)
+})
 
 watch(searchVal, (newSearchVal, oldSearchVal) => {
   if(newSearchVal === '') {
