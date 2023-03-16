@@ -13,7 +13,7 @@
                 </div>
                 <div class="item-info-wrapper">
                     <div class="item-info-header">
-                        <router-link :to="{ name: 'lookbook', params: { id: item.itemID } }">{{ item.carMake }} {{ item.carModel }}</router-link>
+                        <router-link :to="{ name: 'lookbook', params: { id: item.id } }">{{ item.carMake }} {{ item.carModel }}</router-link>
                         <p class="cursor-pointer" @click="removeItem(item.carModel, index)">X</p>
                     </div>
                     <p class="item-quantity">QTY: <span> {{ item.quantity }}</span></p>
@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 
 export default {
     setup() {
@@ -44,6 +44,7 @@ export default {
         const cart = ref([]);
         const msg = ref('');
         const cost = ref(0);
+        const cartCount = inject('cartCount');
 
         // remove item from cart
         const removeItem = (carModel, index) => {
@@ -56,6 +57,7 @@ export default {
             if(cart.value.length === 0 ) {
                 cost.value = 0;
             }
+            cartCount.value -= 1;
             localStorage.setItem('cart', JSON.stringify(cart.value));
         }
 

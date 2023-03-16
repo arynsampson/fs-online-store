@@ -13,10 +13,10 @@
 </template>
 
 <script setup>
-import  { reactive } from 'vue'
+import  { reactive, defineProps, inject } from 'vue'
 
-const props = defineProps(['uid', 'image', 'carMake', 'carModel', 'price']);
 const props = defineProps(['uid', 'image', 'carMake', 'carModel', 'price', 'colour']);
+const cartCount = inject('cartCount');
 
 const addToCart = (itemID) => {
     const cart = JSON.parse(localStorage.getItem('cart'));
@@ -24,19 +24,21 @@ const addToCart = (itemID) => {
     const item = reactive({})
 
     for(let x = 0; x < cars.length; x++) {
-        if(cars[x].id === itemID) {
+        if(cars[x].id == itemID) {
             item.value = cars[x];
         }
     }
     
     cart.push({
-        itemID: item.value.id,
+        id: item.value.id,
         carMake: item.value.carMake,
         carModel: item.value.carModel,
         price: item.value.price,
         image: item.value.image,
         quantity: 1
     });
+
+    cartCount.value += 1;
     localStorage.setItem('cart', JSON.stringify(cart));
     alert(`You have added: ${item.value.carMake} ${item.value.carModel} to your cart.`);
 }

@@ -88,7 +88,7 @@
 
 <script>
 // @ is an alias to /src
-import { onMounted, reactive, computed, ref } from 'vue'
+import { onMounted, computed, ref, inject } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper'
 import Navbar from '@/components/Navbar.vue'
@@ -136,8 +136,9 @@ export default {
       } else {
         slides.value = 3;
       }
-
     })
+
+    const cartCount = inject('cartCount');
 
     return {
       Navbar,

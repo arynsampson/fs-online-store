@@ -12,7 +12,7 @@
             <router-link to="/about" class="nav-item">About</router-link>
             <router-link to="/contact" class="nav-item">Contact</router-link> 
           </nav>
-          <button class="button" @click="toggleCart">Cart</button>
+          <button class="button" @click="toggleCart">Cart <span> ({{ cartCount }})</span></button>
           <button class="nav-menu-open" @click="toggleNav" ref="closeNav">NAV</button>
       </div>
     </div>
@@ -21,13 +21,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, inject } from 'vue'
 import Cart from '@/components/Cart.vue'
 
 const showCart = ref(false);
 const showNav = ref(false);
 const navbar = ref(null);
 const closeNav = ref(null);
+const cartCount = inject('cartCount');
 
 onMounted(() => {
   if(window.screen.width > 767) {
@@ -36,6 +37,8 @@ onMounted(() => {
     navbar.value.style.height = '100%';
     closeNav.value.style.display = 'none';
   }
+
+  cartCount.value = JSON.parse(localStorage.getItem('cart')).length;
 })
 
 const toggleCart = () => {
