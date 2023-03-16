@@ -23,3 +23,13 @@ Run in code editor
 Run npm install in code editor
 Run npm run serve to run project
 Navigate to localhost to view
+
+## FIXES
+
+16/03/2023
+  - User can now search carMake & carModel
+  - Add carMake filter
+  - Add car colour filter
+  - Add "Add to cart" alert/notification
+  - Added Show number of items in cart
+  - Restyled LookBook page
