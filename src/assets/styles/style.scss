@@ -34,24 +34,27 @@ $btn-bg: #FF8000;
             @apply hidden;
         }
 
-        .navbar {
+        .logo-wrapper + nav.navbar {
             @apply absolute inset-0 h-screen flex-col justify-evenly items-center hidden;
             background: $primary-colour;
 
             .nav-menu-close {
-                @apply absolute top-5 right-8 text-3xl;
+                @apply block absolute top-5 right-8 text-3xl;
             }
 
-            .nav-item {
-                @apply uppercase font-bold;
-
-                &:hover {
-                    @apply cursor-pointer;
-                    color: $secondary-colour;
-                }
+            button.nav-menu-open {
+                display: none;
             }
         }
 
+        .nav-item {
+            @apply uppercase font-bold;
+
+            &:hover {
+                @apply cursor-pointer;
+                color: $secondary-colour;
+            }
+        }
     }
 }
 
@@ -336,7 +339,7 @@ $btn-bg: #FF8000;
             @apply flex flex-row gap-y-4;
     
             input[type="text"] {
-                @apply pt-1 pb-3
+                @apply pt-3 pb-3
             }
         }
 
