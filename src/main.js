@@ -4,4 +4,4 @@ import router from './router'
 import '@/assets/styles/style.scss'
 import '@/assets/styles/global.scss'
 
-createApp(App).provide('cartCount', ref(null)).use(router).mount('#app')
+createApp(App).provide('cartCount', ref(0)).use(router).mount('#app')
