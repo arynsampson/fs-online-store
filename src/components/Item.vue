@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import  { reactive, defineProps, inject } from 'vue'
+import  { reactive, inject } from 'vue'
 
 const props = defineProps(['uid', 'image', 'carMake', 'carModel', 'price', 'colour']);
 const cartCount = inject('cartCount');
@@ -23,12 +23,23 @@ const addToCart = (itemID) => {
     const cars = JSON.parse(localStorage.getItem('cars'));
     const item = reactive({})
 
+    // set the car to add the item variable
     for(let x = 0; x < cars.length; x++) {
         if(cars[x].id == itemID) {
             item.value = cars[x];
         }
     }
+
+    // check if item is already in cart
+    for(let x = 0; x < cart.length; x++) {
+        if(cart[x].id == item.value.id) {
+            // block user from adding already existing item
+            alert('This item is already in your cart. Open your cart to manage the item.');
+            return 
+        }
+    }
     
+    // add item to cart
     cart.push({
         id: item.value.id,
         carMake: item.value.carMake,
