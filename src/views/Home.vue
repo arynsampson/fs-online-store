@@ -19,6 +19,7 @@
                   :carMake="item.carMake"
                   :carModel="item.carModel"
                   :price="item.price"
+                  :colour="item.colour"
                 />
               </swiper-slide>
             </swiper>
@@ -48,6 +49,7 @@
                   :carMake="item.carMake"
                   :carModel="item.carModel"
                   :price="item.price"
+                  :colour="item.colour"
                 />
               </swiper-slide>
             </swiper>
@@ -73,6 +75,7 @@
                   :carMake="item.carMake"
                   :carModel="item.carModel"
                   :price="item.price"
+                  :colour="item.colour"
                 />
               </swiper-slide>
             </swiper>

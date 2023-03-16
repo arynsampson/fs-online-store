@@ -6,6 +6,7 @@
         <div class="item-card-info-wrapper">
             <router-link :to="{ name: 'lookbook', params: { id: uid } }" class="item-name">{{ carMake }} {{ carModel }}</router-link>
             <p class="item-card-price">R {{ price }}</p>
+            <p>Colour: <span class="colour-block" :style="{background: colour}"></span>{{ colour }}</p>
         </div>
         <button class="add-to-cart-btn button" @click="addToCart(uid)">Add to cart</button>
     </div>
@@ -15,6 +16,7 @@
 import  { reactive } from 'vue'
 
 const props = defineProps(['uid', 'image', 'carMake', 'carModel', 'price']);
+const props = defineProps(['uid', 'image', 'carMake', 'carModel', 'price', 'colour']);
 
 const addToCart = (itemID) => {
     const cart = JSON.parse(localStorage.getItem('cart'));

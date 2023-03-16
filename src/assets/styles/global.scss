@@ -67,15 +67,9 @@ input:focus, textarea:focus {
     }
 }
 
-.hide {
-    display: none;
-}
-
-.hidden {
-    opacity: 0;
-    transition: all 2s;
-}
-
-.show {
-    opacity: 1;
+.colour-block {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 3px;
 }
