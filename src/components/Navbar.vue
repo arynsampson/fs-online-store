@@ -31,13 +31,6 @@ const closeNav = ref(null);
 const cartCount = inject('cartCount');
 
 onMounted(() => {
-  if(window.screen.width > 767) {
-    navbar.value.classList.add('flex');
-    navbar.value.style.position = 'static';
-    navbar.value.style.height = '100%';
-    closeNav.value.style.display = 'none';
-  }
-
   cartCount.value = JSON.parse(localStorage.getItem('cart')).length;
 })
 

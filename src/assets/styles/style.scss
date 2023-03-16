@@ -278,15 +278,15 @@ $btn-bg: #FF8000;
             }
     
             .logo-wrapper + nav.navbar {
-                @apply grow flex flex-row justify-around;
+                @apply static flex grow flex-row justify-around h-auto;
 
                 .nav-menu-close {
                     @apply hidden;
                 }
+            }
 
-                button.nav-menu-open {
-                    display: none;
-                }
+            .nav-menu-open {
+                display: none;
             }
     
         }
