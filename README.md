@@ -33,3 +33,4 @@ Navigate to localhost to view
   - Add "Add to cart" alert/notification
   - Added Show number of items in cart
   - Restyled LookBook page
+  - Reworked the responsiveness
