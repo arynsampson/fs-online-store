@@ -8,7 +8,7 @@
               <input type="text" v-model="searchVal" placeholder="Search items" @keyup="worker('search')">
               <div>
                 <select name="sort" id="sort" @change="worker($event.target.value)">
-                  <option>Choose sort</option>
+                  <option value="all">Choose sort</option>
                   <option value="asc">Name A-Z</option>
                   <option value="desc">Name Z-A</option>
                   <option value="priceASC">Price low - high</option>
@@ -17,13 +17,19 @@
               </div>
               <div>
                 <select name="filter" id="filter" @change="worker($event.target.value)">
-                  <option>Choose filter</option>
+                  <option value="all">Cars</option>
                   <option v-for="(car, index) in data" :value="car.carMake" :key="index">{{ car.carMake }}</option>
+                </select>
+              </div>
+              <div>
+                <select name="colorFilter" id="colourFilter" @change="colourFilter($event.target.value)">
+                  <option value="all">Colours</option>
+                  <option v-for="(car, index) in data" :value="car.colour" :key="index">{{ car.colour }}</option>
                 </select>
               </div>
             </form>
           </div>
-          <div class="shop-items hidden">
+          <div class="shop-items">
             <Item 
               v-for="(item, index) in data"
               :key="index"
@@ -32,6 +38,7 @@
               :carMake="item.carMake"
               :carModel="item.carModel"
               :price="item.price"
+              :colour="item.colour"
             />
           </div>
         </div>
@@ -70,12 +77,25 @@ watch(searchVal, (newSearchVal, oldSearchVal) => {
   }
 })
 
+const colourFilter = value => {
+  switch (value) {
+    // reset filter
+    case 'all':
+      data.value = MockData;
+      break;
+
+    default:
+      const colourResults = computed(() => {
+        return data.value.filter((item) => item.colour.toLowerCase().includes(value.toLowerCase()))
+      });
+      data.value = colourResults.value;
+  }
+}
 const worker = workerVal => {
 
   switch (workerVal) {
     case 'search':
       const searchResults = computed(() => {
-        return data.value.filter((item) => item.carMake.toLowerCase().includes(searchVal.value));
         return (data.value.filter((item) => item.carMake.toLowerCase().includes(searchVal.value) || item.carModel.toLowerCase().includes(searchVal.value)))
       });
       data.value = searchResults.value;
@@ -124,10 +144,17 @@ const worker = workerVal => {
       });
       data.value = sortResultsPriceDESC.value;
     break;
-      // const filterCarMake = computed(() => {
-      //   return data.value.filter((item) => item.carMake.toLowerCase().includes(workerVal));
-      // });
-      // data.value = filterCarMake;
+
+    // reset filter
+    case 'all':
+      data.value = MockData;
+      break;
+
+    default:
+      const filterCarMake = computed(() => {
+        return data.value.filter((item) => item.carMake.toLowerCase().includes(workerVal.toLowerCase()));
+      });
+      data.value = filterCarMake.value;
   }
 }
 </script>
