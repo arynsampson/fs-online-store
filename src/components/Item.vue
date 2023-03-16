@@ -38,6 +38,7 @@ const addToCart = (itemID) => {
         quantity: 1
     });
     localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`You have added: ${item.value.carMake} ${item.value.carModel} to your cart.`);
 }
 </script>
 

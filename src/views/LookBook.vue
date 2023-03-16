@@ -56,6 +56,7 @@ export default {
       });
       inCart.value = true;
       localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`You have added: ${item.value.carMake} ${item.value.carModel} to your cart.`);
     }
 
     return {
