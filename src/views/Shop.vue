@@ -76,6 +76,7 @@ const worker = workerVal => {
     case 'search':
       const searchResults = computed(() => {
         return data.value.filter((item) => item.carMake.toLowerCase().includes(searchVal.value));
+        return (data.value.filter((item) => item.carMake.toLowerCase().includes(searchVal.value) || item.carModel.toLowerCase().includes(searchVal.value)))
       });
       data.value = searchResults.value;
     break;
